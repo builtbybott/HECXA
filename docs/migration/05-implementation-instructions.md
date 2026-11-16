@@ -8,9 +8,9 @@ Act as a senior frontend migration architect and implementation engineer. Make r
 
 ## Current authorization
 
-**Only Phase 00 documentation is authorized. Phase 01 implementation is not authorized.**
+**Phase 01 is authorized and in progress on `feature/phase-01-react-foundation`. Phase 02 is not authorized.**
 
-Do not install dependencies, create the React app, change application source, alter Supabase, or deploy until the user explicitly approves Phase 01.
+Do not install Glassy UI components, migrate features, connect Supabase, alter the database, or deploy during Phase 01. Do not proceed to Phase 02 until Phase 01 is reviewed and explicitly approved.
 
 ## Required workflow after Phase 01 approval
 
