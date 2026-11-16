@@ -16,7 +16,8 @@
 ## Approval gates
 
 - Phase 00 is approved by the user's explicit approval already given in chat. This authorizes documentation preparation only.
-- Phase 01 must not start until the user separately approves Phase 00 documentation and explicitly authorizes Phase 01.
+- Phase 01 was explicitly approved by the user and is now in progress on `feature/phase-01-react-foundation`.
+- Phase 02 must not start until Phase 01 is reviewed as complete and the user explicitly approves Phase 02.
 - At each later phase boundary, stop and present deliverables for approval before starting the next phase.
 - Do not ask the user to approve routine implementation decisions inside an approved phase. Make low-risk technical choices, document them and proceed.
 - Ask for approval before destructive, external, paid, security-sensitive, irreversible or public actions.
