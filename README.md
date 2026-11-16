@@ -1,63 +1,59 @@
 # HECXA — Productivity Workspace
 
-**A premium, dark-mode personal productivity workspace built by BOTT.** HECXA brings tasks, notes, projects, milestones, calendar events, goals, analytics, and a rule-based productivity assistant into one responsive web app.
+HECXA is being migrated to a React-based frontend in controlled phases. The existing vanilla implementation and Supabase backend are being preserved during the transition.
 
-> This repository is an open-source development build. It is not a hosted service, and it is not a security or compliance certification.
+## Current migration status
 
-## Features
+- Active branch: `feature/phase-01-react-foundation`
+- Current work: Phase 01 — frontend foundation
+- Frontend: React 19.3.1 + Vite 8.3.8
+- Styling: Tailwind CSS 4.3.5
+- Language: JavaScript / JSX
+- Backend: Existing Supabase integration is not connected in Phase 01
+- Glassy UI registry: planned for Phase 02, not installed yet
 
-- Email/password authentication and persistent sessions via Supabase Auth
-- Dashboard and workspace metrics
-- Tasks with priorities, due dates, status, tags, projects, sorting, and filters
-- Notes with tags, pinning, and favourites
-- Projects, milestones, and progress tracking
-- Calendar with task deadlines and events
-- Goals and productivity analytics
-- HECXA AI: local rule-based productivity assistance (not a remote LLM)
-- Profile, appearance, and AI preference settings
-- Global search and responsive desktop/mobile navigation
+## Requirements
 
-## Tech stack
-
-- HTML, CSS, and vanilla JavaScript ES modules
-- Supabase JavaScript client (loaded from CDN)
-- Supabase Auth and PostgreSQL with Row Level Security (RLS)
+- Node.js `^20.19.0 || >=22.12.0`
+- npm 10 or compatible npm version
+- Git
 
 ## Run locally
 
-1. Install a current version of a modern browser and a local static web server. For example, use the **Live Server** extension in Visual Studio Code.
-2. Create a new Supabase project for your own development/testing.
-3. In the Supabase dashboard, open **Project Settings → API** and copy the Project URL and **publishable** key (or legacy anon key).
-4. Edit `config.js` and replace the two placeholder values with your own project URL and publishable/anon key.
-5. Open the repository folder in VS Code and launch `index.html` using Live Server. Do not open it as a `file://` URL; ES modules require a local HTTP server.
-6. In Supabase SQL Editor, review `supabase_schema.sql` and apply the schema to your **new test project**. Review any existing tables and policies first.
-7. In Supabase Auth settings, configure the Site URL and redirect URLs for your local server address. For production, configure the exact deployed domain.
-8. Create a test account and verify authentication, data isolation, and all CRUD actions before using the app with real data.
+After cloning this branch:
 
-## Supabase configuration and security
+```bash
+npm install
+npm run dev
+```
 
-- `config.js` is intentionally committed with placeholders. Add your own project settings locally.
-- A Supabase publishable/anon key is designed for browser use, but **RLS policies are essential**. Never put a `service_role` key, secret key, database password, or payment-provider secret in frontend code or GitHub.
-- Use a separate Supabase project for local testing; this repository does not include or promise access to the original developer's backend.
-- Before production, audit every table, RLS policy, database function, storage bucket, and Auth redirect setting. Test that one user cannot read or alter another user's records.
-- The SQL schema may need alignment with the exact app version and Supabase project. Back up data and review the SQL before applying it to an existing project.
+Vite is configured for `http://127.0.0.1:5173`.
 
-## AI behaviour
+Create a production build:
 
-The included HECXA assistant uses local rule-based logic over the signed-in user's workspace state. It does not call an external AI provider. Do not describe it as a generative AI integration unless one is added separately.
+```bash
+npm run build
+npm run preview
+```
+
+The first successful `npm install` generates `package-lock.json`. Commit that lockfile with the foundation before considering Phase 01 complete. The lockfile is not yet committed because dependency installation and build verification could not be run in the repository environment.
+
+## Legacy application
+
+The previous HTML entry document is preserved at `legacy/index.html` and in Git history. Existing root-level legacy JavaScript, CSS, Supabase schema and configuration files have not been removed or migrated. The old HTML document's referenced `css/` and `js/` paths require reconciliation against the full legacy tree before feature migration.
+
+## Supabase and security
+
+Phase 01 does not connect to Supabase and does not make database changes. Do not add production credentials. Never put a Supabase service-role key or secret in browser code or any `VITE_*` variable. Supabase client integration is planned for a later approved phase.
+
+## Phase boundaries
+
+- Phase 01: React/Vite/Tailwind foundation only.
+- Phase 02: Glassy UI registry evaluation and HECXA design system.
+- Later phases: application shell, feature migration, Supabase integration and consolidated QA.
+
+Do not deploy publicly or modify the existing Supabase project without separate explicit approval.
 
 ## Open source
 
-This project is released under the [MIT License](LICENSE). Contributions, bug reports, and improvements are welcome. Please do not submit credentials, private user data, or production database dumps in issues or pull requests.
-
-## Project status
-
-- Stage: community/dev build
-- Deployment: not included; deploy only after your own configuration and testing
-- Payments: not implemented
-- External LLM API: not implemented
-- Security review: not independently audited
-
-## Credits
-
-HECXA is a BOTT project. Product identity and included brand assets remain subject to their respective rights; the MIT license covers the code as stated in the license, not third-party assets or services.
+See [LICENSE](LICENSE). The MIT license for repository code does not automatically cover third-party brand assets or services.
