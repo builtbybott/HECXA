@@ -1,28 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050608"><meta name="description" content="HECXA — Personal Productivity Workspace with AI at its core.">
-<title>HECXA — Productivity Workspace</title><link rel="icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/responsive.css">
-</head><body>
-<div id="authScreen" class="auth-screen"><div class="auth-card">
-  <div class="auth-logo"><img src="logo.png" alt="HECXA"></div>
-  <div class="eyebrow">BUILT BY BOTT</div><h1 id="authTitle">Welcome back.</h1><p id="authSub">Sign in to your HECXA workspace.</p>
-  <div class="auth-tabs"><button id="loginTab" class="active" type="button">Login</button><button id="signupTab" type="button">Create account</button></div>
-  <form id="authForm" class="form"><div id="nameField" style="display:none"><label>Name<input id="authName" autocomplete="name" placeholder="Your name"></label></div><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" placeholder="••••••••" minlength="6" required></label><button class="btn full" id="authSubmit" type="submit">Continue →</button></form>
-  <button id="resetBtn" class="text-btn auth-reset" type="button">Forgot password?</button><p id="authMsg" class="auth-msg"></p><div class="auth-note">Your workspace data is stored in your HECXA account.</div>
-</div></div>
-
-<div id="app" class="app" hidden>
-<aside class="sidebar" id="sidebar"><div class="brand"><img src="assets/logo.png" alt="HECXA"></div>
-<nav id="desktopNav"><button class="nav-item active" data-page="dashboard"><span>⌂</span>Dashboard</button><button class="nav-item" data-page="tasks"><span>✓</span>Tasks</button><button class="nav-item" data-page="notes"><span>▤</span>Notes</button><button class="nav-item" data-page="projects"><span>▣</span>Projects</button><button class="nav-item" data-page="calendar"><span>□</span>Calendar</button><button class="nav-item" data-page="ai"><span>✦</span>HECXA AI</button><button class="nav-item" data-page="analytics"><span>◈</span>Analytics</button></nav>
-<div class="side-bottom"><button class="nav-item" data-page="settings"><span>⚙</span>Settings</button></div></aside>
-<main class="main"><header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="top-search"><span>⌕</span><input id="globalSearch" placeholder="Search HECXA… (Ctrl + K)"></div><div class="top-actions"><div class="live-clock"><strong id="liveTime">--:--</strong><span id="liveDate">Loading…</span></div><button class="icon-btn" id="notifyBtn">♢<i id="notifyDot" hidden></i></button><button class="profile-chip" id="profileButton"><span class="avatar" id="avatar">A</span><span id="topName">HECXA User</span></button></div></header><section id="content" class="content"></section></main>
-<nav class="mobile-nav"><button class="mobile-nav-item active" data-page="dashboard">⌂<small>Home</small></button><button class="mobile-nav-item" data-page="tasks">✓<small>Tasks</small></button><button class="mobile-nav-item" data-page="calendar">□<small>Calendar</small></button><button class="mobile-nav-item" data-page="ai">✦<small>AI</small></button><button class="mobile-nav-item" data-page="settings">•••<small>More</small></button></nav>
-</div>
-<div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal" id="modal"></div></div><div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script type="module" src="js/app-final.js"></script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050608" />
+    <meta name="description" content="HECXA — Personal Productivity Workspace." />
+    <title>HECXA — Productivity Workspace</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
